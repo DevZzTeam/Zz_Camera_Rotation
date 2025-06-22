@@ -38,6 +38,9 @@ exports.zz_camera_rotation:StartCameraEffect(cam, amplificator, maxX, maxY, useN
 exports.zz_camera_rotation:StopCameraEffect()
 ```
 
+# Socials
+DevZzTeam discord server: https://discord.gg/QUdUGqJeHP
+
 ## License
 
 [GNU](https://choosealicense.com/licenses/gpl-3.0/)
