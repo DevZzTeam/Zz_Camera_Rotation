@@ -4,7 +4,7 @@ local camera = nil
 
 local function CreateGameplayCam()
     local playerPed = PlayerPedId()
-    cam = CreateCamera("DEFAULT_SCRIPTED_CAMERA", true)
+    local cam = CreateCamera("DEFAULT_SCRIPTED_CAMERA", true)
     local offsetCoords = GetGameplayCamCoord() - GetEntityCoords(playerPed)
     AttachCamToEntity(cam, playerPed, offsetCoords.x, offsetCoords.y, offsetCoords.z, false)
     SetCamFov(cam, GetGameplayCamFov())
