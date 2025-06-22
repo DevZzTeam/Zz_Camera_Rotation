@@ -11,7 +11,7 @@ git clone https://github.com/DevZzTeam/Zz_Camera_Rotation.git
 ```
 Or you can just download the repository and put it in your **resources** folder
 
-add this line in your server.cfg
+add this line to your server.cfg
 ```lua
 ensure zz_camera_rotation
 ```
