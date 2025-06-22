@@ -41,7 +41,7 @@ local function GetNormalizedCursor()
     return normX, normY
 end
 
-local function StartCameraEffect(cam, amplificator, maxX, maxY, useNuiFocus, disableAllControl, exceptControls)
+local function StartCameraEffect(cam, amplificator, maxX, maxY, showCursor, disableAllControl, exceptControls)
     StopCameraEffect() --stop previous camera effect to avoid the loop duplication
     Wait(100)
 
@@ -58,11 +58,12 @@ local function StartCameraEffect(cam, amplificator, maxX, maxY, useNuiFocus, dis
 
         SetCamActive(cam, true)
 
-        if useNuiFocus then
+        if showCursor then
             SetNuiFocus(true, true)
             SetNuiFocusKeepInput(true)
-            SetCursorLocation(0.5, 0.5)
         end
+
+        SetCursorLocation(0.5, 0.5)
 
         local defaultCamRot = GetCamRot(cam, 0)
 
@@ -93,7 +94,7 @@ local function StartCameraEffect(cam, amplificator, maxX, maxY, useNuiFocus, dis
 
         end
 
-        if useNuiFocus then
+        if showCursor then
             SetNuiFocus(false, false)
         end
     end)
@@ -105,7 +106,7 @@ if config.command.use and tostring(config.command.name):gsub(" ", "") ~= "" then
     RegisterCommand(config.command.name, function()
         isCameraEffectRunning = not isCameraEffectRunning
         if isCameraEffectRunning then
-            StartCameraEffect(GetRenderingCam(), config.amplificator, config.maxDistanceX, config.maxDistanceY, true, config.disableAllControlAction, {isRDR and `INPUT_MP_TEXT_CHAT_ALL` or 245})
+            StartCameraEffect(GetRenderingCam(), config.amplificator, config.maxDistanceX, config.maxDistanceY, config.showCursor, config.disableAllControlAction, {isRDR and `INPUT_MP_TEXT_CHAT_ALL` or 245})
         else
             StopCameraEffect()
         end
