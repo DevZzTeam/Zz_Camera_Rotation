@@ -10,6 +10,3 @@ config.command = {
     name = "cameffect",
     permissions = false
 }
-
---exports.zz_camera_rotation:StartCameraEffect(cam, amplificator, maxX, maxY, useNuiFocus, disableAllControl, exeptControls)
---exports.zz_camera_rotation:StopCameraEffect()
