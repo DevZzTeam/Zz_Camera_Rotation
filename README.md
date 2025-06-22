@@ -33,7 +33,7 @@ dependency 'zz_camera_rotation'
 
 These functions can only be used on the client side:
 ```lua
-exports.zz_camera_rotation:StartCameraEffect(cam, amplificator, maxX, maxY, showCursor, disableAllControl, exeptControls)
+exports.zz_camera_rotation:StartCameraEffect(cam, amplificator, maxX, maxY, showCursor, disableAllControl, exceptControls)
 
 exports.zz_camera_rotation:StopCameraEffect()
 ```
