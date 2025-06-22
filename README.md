@@ -22,7 +22,7 @@ Open **config.lua** and modify the settings as needed
 ## Usage
 **In Game:**
 
-You can simply write **/cameffect** in you chat game.
+You can simply use **/cameffect** in you chat game.
 
 **In Your Script:**
 
