@@ -9,15 +9,16 @@ local function CreateGameplayCam()
     AttachCamToEntity(cam, playerPed, offsetCoords.x, offsetCoords.y, offsetCoords.z, false)
     SetCamFov(cam, GetGameplayCamFov())
     SetCamRot(cam, GetGameplayCamRot(0))
-    RenderScriptCams(true, false, 0, false, true)
     return cam
 end
 
 local function DeleteGameplayCamera()
-    SetCamActive(camera, false)
-    DestroyCam(camera, false)
-    RenderScriptCams(false, false, 0, false, false)
-    camera = nil
+    if DoesCamExist(camera) then
+        SetCamActive(camera, false)
+        DestroyCam(camera, false)
+        RenderScriptCams(false, false, 0, false, false)
+        camera = nil
+    end
 end
 
 local function StopCameraEffect()
@@ -57,6 +58,7 @@ local function StartCameraEffect(cam, amplificator, maxX, maxY, showCursor, disa
         end
 
         SetCamActive(cam, true)
+        RenderScriptCams(true, false, 0, false, true)
 
         if showCursor then
             SetNuiFocus(true, true)
